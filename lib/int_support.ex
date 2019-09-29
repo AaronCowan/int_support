@@ -66,4 +66,44 @@ defmodule IntSupport do
       ) do
     "(" <> area_code <> ") " <> head <> "-" <> tail
   end
+
+  @doc """
+  Returns the number of bytes from passed number of kilobytes.
+
+  ## Examples
+      iex> IntSupport.kilobytes(2)
+      2048
+  """
+  def kilobytes(int) when is_integer(int), do: int * kilobyte()
+  defp kilobyte(), do: 1024
+
+  @doc """
+  Returns the number of bytes from passed number of megabytes.
+
+  ## Examples
+      iex> IntSupport.megabytes(3)
+      3145728
+  """
+  def megabytes(int) when is_integer(int), do: int * megabyte()
+  defp megabyte(), do: 1024 * kilobyte()
+
+  @doc """
+  Returns the number of bytes from passed number of gigabytes.
+
+  ## Examples
+      iex> IntSupport.gigabytes(3)
+      3221225472
+  """
+  def gigabytes(int) when is_integer(int), do: int * gigabyte()
+  defp gigabyte(), do: 1024 * megabyte()
+
+  @doc """
+  Returns the number of bytes from passed number of terabytes.
+
+  ## Examples
+      iex> IntSupport.terabytes(4)
+      4398046511104
+  """
+  def terabytes(int) when is_integer(int), do: int * terabyte()
+  defp terabyte(), do: 1024 * gigabyte()
 end
