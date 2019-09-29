@@ -10,7 +10,10 @@ defmodule IntSupport.MixProject do
       deps: deps(),
       name: "int_support",
       source_url: "https://gitlab.com/ac.aaroncowan/int_support",
-      homepage_url: "https://gitlab.com/ac.aaroncowan/int_support"
+      homepage_url: "https://gitlab.com/ac.aaroncowan/int_support",
+      description: description(),
+      licenses: ["MIT"],
+      links: %{"GitLab" => "https://gitlab.com/ac.aaroncowan/int_support"} 
     ]
   end
 
@@ -28,5 +31,9 @@ defmodule IntSupport.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
+  end
+
+  defp description() do
+    "An Elixir library that is porting Rail's ActiveSupport numeric and integer core extensions."
   end
 end
