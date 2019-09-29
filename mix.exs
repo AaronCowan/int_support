@@ -4,16 +4,15 @@ defmodule IntSupport.MixProject do
   def project do
     [
       app: :int_support,
+      name: "int_support",
       version: "0.1.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      name: "int_support",
       source_url: "https://gitlab.com/ac.aaroncowan/int_support",
       homepage_url: "https://gitlab.com/ac.aaroncowan/int_support",
       description: description(),
-      licenses: ["MIT"],
-      links: %{"GitLab" => "https://gitlab.com/ac.aaroncowan/int_support"} 
+      package: package()
     ]
   end
 
@@ -35,5 +34,13 @@ defmodule IntSupport.MixProject do
 
   defp description() do
     "An Elixir library that is porting Rail's ActiveSupport numeric and integer core extensions."
+  end
+
+  defp package() do
+    [
+      name: "int_support",
+      licenses: ["MIT"],
+      links: %{"GitLab" => "https://gitlab.com/ac.aaroncowan/int_support"}
+    ]
   end
 end
