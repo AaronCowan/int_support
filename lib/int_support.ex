@@ -20,7 +20,7 @@ defmodule IntSupport do
       iex> IntSupport.ordinalize(2009)
       "2009th"
       iex> IntSupport.ordinalize(-21)
-      "-21th"
+      "-21st"
       iex> IntSupport.ordinalize(-134)
       "-134th"
   """
