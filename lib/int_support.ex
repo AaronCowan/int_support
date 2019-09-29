@@ -114,54 +114,34 @@ defmodule IntSupport do
   ## Examples
       iex> IntSupport.bytes_to_human(123)
       "123 Bytes"
+      iex> IntSupport.bytes_to_human(1234)
+      "1.21 KB"
+      iex> IntSupport.bytes_to_human(1234567)
+      "1.18 MB"
+      iex> IntSupport.bytes_to_human(1234567890)
+      "1.15 GB"
+      iex> IntSupport.bytes_to_human(1234567890123)
+      "1.12 TB"
   """
   def bytes_to_human(int) when int < @kilobyte do
     Integer.to_string(int) <> " Bytes"
   end
 
-  @doc """
-  Produce a string representation of a number as a human-readable number of bytes:
-
-  ## Examples
-      iex> IntSupport.bytes_to_human(1234)
-      "1.21 KB"
-  """
   def bytes_to_human(int) when int < @megabyte do
     kb = Float.round(int / @kilobyte, 2)
     Float.to_string(kb) <> " KB"
   end
 
-  @doc """
-  Produce a string representation of a number as a human-readable number of bytes:
-
-  ## Examples
-      iex> IntSupport.bytes_to_human(1234567)
-      "1.18 MB"
-  """
   def bytes_to_human(int) when int < @gigabyte do
     mb = Float.round(int / @megabyte, 2)
     Float.to_string(mb) <> " MB"
   end
 
-  @doc """
-  Produce a string representation of a number as a human-readable number of bytes:
-
-  ## Examples
-      iex> IntSupport.bytes_to_human(1234567890)
-      "1.15 GB"
-  """
   def bytes_to_human(int) when int < @terabyte do
     gb = Float.round(int / @gigabyte, 2)
     Float.to_string(gb) <> " GB"
   end
 
-  @doc """
-  Produce a string representation of a number as a human-readable number of bytes:
-
-  ## Examples
-      iex> IntSupport.bytes_to_human(1234567890123)
-      "1.12 TB"
-  """
   def bytes_to_human(int) when int > @terabyte do
     tb = Float.round(int / @terabyte, 2)
     Float.to_string(tb) <> " TB"
