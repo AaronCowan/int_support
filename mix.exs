@@ -7,7 +7,10 @@ defmodule IntSupport.MixProject do
       version: "0.1.0",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      name: "int_support",
+      source_url: "https://gitlab.com/ac.aaroncowan/int_support",
+      homepage_url: "https://gitlab.com/ac.aaroncowan/int_support"
     ]
   end
 
